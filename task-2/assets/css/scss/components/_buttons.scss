@@ -1,0 +1,54 @@
+.logout-btn {
+  background: $c-black;
+  border-radius: 4px;
+  color: $c-white;
+  margin: 0 10px;
+  padding: 6px;
+
+  &:hover {
+    background: $c-white;
+    color: $c-black;
+    cursor: pointer;
+  }
+}
+
+.new-root-category {
+  margin-right: auto;
+  position: relative;
+
+  span {
+    font-weight: bold;
+  }
+
+  button {
+    border: none;
+    position: absolute;
+    right: -45px;
+    top: -12px;
+
+    &:active {
+      background-color: $c-green;
+      box-shadow: -1px 1px $c-light-grey;
+      transform: translateY(2px);
+    }
+  }
+}
+
+.plus-sign {
+  background:
+    linear-gradient($c-white, $c-white),
+    linear-gradient($c-white, $c-white),
+    $c-green;
+  background-position: center;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (20px)*/
+  display:inline-block;
+  height:40px;
+  width:40px;
+
+  &:hover {
+    border: 2px solid $c-white;
+    cursor: pointer;
+  }
+}

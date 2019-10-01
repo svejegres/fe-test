@@ -1,0 +1,59 @@
+.category-form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.categories-wrapper {
+  background: $c-white;
+  height: auto;
+  margin: 80px 10px;
+  width: 300px;
+}
+
+#display-area {
+  margin: 10px auto;
+  padding-top: 15px;
+}
+
+.category-box {
+  border: 1px solid $c-black;
+  cursor: default;
+  padding: 5px 10px;
+  position: relative;
+
+  .edit, .delete, .new {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 0px;
+  }
+
+  .edit {
+    color: $c-orange;
+    right: 87px;
+  }
+
+  .delete {
+    color: $c-red;
+    right: 38px;
+  }
+
+  .new {
+    color: $c-green;
+    right: 3px;
+  }
+
+  &:hover .edit, &:hover .delete, &:hover .new {
+    display: block;
+  }
+}
+
+.category-title {
+  color: $c-web-blue;
+  margin: 0px 0px 5px 0px;
+  padding: 0px;
+}
+
+.category-description {
+  text-align: justify;
+}

@@ -1,0 +1,22 @@
+.validation-err-msg {
+  background: red;
+  font-size: 18px;
+  left: 33px;
+  padding: 6px;
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+
+  &::before {
+    background: transparent;
+    border-color: $c-red $c-red transparent transparent;
+    border-style: solid;
+    border-width: 0 33px 30px 0;
+    content: "";
+    display: block;
+    left: -33px;
+    position: absolute;
+    top: 0;
+    width: 0;
+  }
+}

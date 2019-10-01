@@ -1,0 +1,374 @@
+.form-wrapper {
+  left: calc(50% - 460px);
+  height: 460px;
+  position: relative;
+  top: calc(50% - 230px);
+  width: 920px;
+
+  @include mobile-only {
+    height: auto;
+    margin: 0 auto;
+    position: static;
+    width: 280px;
+  }
+}
+
+#form-front {
+  align-items: center;
+  background: $c-white;
+  display: flex;
+  height: 100%;
+  left: 440px;
+  justify-content: center;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  transition: left 1s ease-out;
+  width: 460px;
+
+  @include mobile-only {
+    height: 420px;
+    left: 50%;
+    margin-left: -160px;
+    top: 380px;
+    transition: top 1s ease-out;
+    width: 320px;
+  }
+
+  &::after {
+    background: $c-dark-blue;
+    content: "";
+    height: 420px;
+    left: -10px;
+    position: absolute;
+    top: 20px;
+    width: 10px;
+
+    @include mobile-only {
+      height: 10px;
+      left: 20px;
+      top: -10px;
+      width: 280px;
+    }
+  }
+
+  .login {
+    display: flex;
+    height: 320px;
+    margin: 10%;
+    width: 280px;
+
+    label[for=name] {
+      top: 175px;
+
+      @include mobile-only {
+        top: 155px !important;
+      }
+    }
+
+    label[for=pwd] {
+      top: 250px;
+
+      @include mobile-only {
+        top: 230px !important;
+      }
+    }
+
+    #name-icon {
+      top: 180px;
+
+      @include mobile-only {
+        top: 160px;
+      }
+    }
+
+    #password-icon {
+      top: 250px;
+
+      @include mobile-only {
+        top: 230px;
+      }
+    }
+  }
+
+  .signup {
+    display: none;
+    height: 320px;
+    margin: 10%;
+    width: 280px;
+
+    label[for=name] {
+      top: 175px;
+
+      @include mobile-only {
+        top: 155px !important;
+      }
+    }
+
+    label[for=pwd] {
+      top: 250px;
+
+      @include mobile-only {
+        top: 230px !important;
+      }
+    }
+
+    #name-icon {
+      @include mobile-only {
+        top: 160px;
+      }
+    }
+
+    #password-icon {
+      top: 255px;
+
+      @include mobile-only {
+        top: 235px;
+      }
+    }
+  }
+
+  h1 {
+    border-bottom: 2px solid $c-light-blue;
+    color: black;
+    font-family: $ff-primary-light;
+    font-size: 28px;
+    height: 65px;
+    white-space: nowrap;
+    width: 35px;
+  }
+
+  img {
+    height: 30px;
+    margin-bottom: 25px;
+    width: 41px;
+  }
+
+  input[type=text], input[type=name], input[type=password] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $c-light-grey;
+    color: $c-dark-grey;
+    font-family: $ff-primary-regular;
+    font-size: 16px;
+    height: 50px;
+    outline: none;
+    width: 100%;
+    z-index: 1;
+  }
+
+  input[type=text]:focus + label, input[type=name]:focus + label, input[type=password]:focus + label {
+    font-family: $ff-primary-bold;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+
+  input[type="text"]:focus ~ #name-icon {
+    background: url("/assets/images/name-sprite.png") 14px 0 !important;
+  }
+
+  input[type="password"]:focus ~ #password-icon {
+    background: url("/assets/images/password-sprite.png") 16px 0 !important;
+  }
+
+  label {
+    color: $c-sapphire;
+    display: block;
+    font-family: $ff-primary-regular;
+    font-size: 16px;
+    left: 90px;
+    position: absolute;
+  }
+
+  input[required] + label:after {
+    color: $c-red;
+    content: '*';
+  }
+
+  button[type=submit] {
+    background: $c-orange;
+    border: none;
+    border-radius: 30px;
+    color: $c-white;
+    font-family: SourceSansPro-Bold;
+    font-size: 13px;
+    height: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: background 0.5s ease-out;
+    width: 140px;
+
+    &:hover {
+      background: $c-yellow;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    color: $c-sapphire;
+    font-family: $ff-primary-regular;
+    font-size: 16px;
+    text-decoration: none;
+
+    &:active, &:focus, &:hover {
+      text-decoration: underline;
+    }
+
+    &:active, &:hover {
+      outline: 0;
+    }
+  }
+}
+
+#upperfold {
+  border-bottom: 20px solid $c-blue;
+  border-left: 10px solid transparent;
+  height: 0;
+  left: -10px;
+  position: absolute;
+  top: 0;
+  width: 0;
+
+  @include mobile-only {
+    border-bottom: 10px solid $c-blue;
+    border-left: 20px solid transparent;
+    left: 0;
+    top: -10px;
+  }
+}
+
+#lowerfold {
+  border-left: 10px solid transparent;
+  border-top: 20px solid $c-blue;
+  bottom: 0;
+  height: 0;
+  left: -10px;
+  position: absolute;
+  width: 0;
+
+  @include mobile-only {
+    border-bottom: 10px solid $c-blue;
+    border-left: none;
+    border-right: 20px solid transparent;
+    border-top: none;
+    left: 300px;
+    top: -10px;
+  }
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#name-icon {
+  background: url("/assets/images/name-sprite.png") 0 0;
+  background-size: cover;
+  height: 16px;
+  left: 350px;
+  position: absolute;
+  top: 180px;
+  width: 14px;
+
+  @include mobile-only {
+    left: 270px;
+  }
+}
+
+#password-icon {
+  background: url("/assets/images/password-sprite.png") 0 0;
+  background-size: cover;
+  height: 17px;
+  left: 350px;
+  position: absolute;
+  width: 16px;
+
+  @include mobile-only {
+    left: 270px;
+  }
+}
+
+#form-back {
+  background: $c-navy-blue;
+  display: flex;
+  height: 420px;
+  justify-content: space-between;
+  margin-top: 20px;
+  opacity: 0.9;
+  padding: 0 80px;
+  width: 100%;
+
+  @include mobile-only {
+    align-items: center;
+    flex-direction: column;
+    height: 800px;
+    padding: 0 10px;
+  }
+}
+
+.alt-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 280px;
+
+  @include mobile-only {
+    align-items: center;
+  }
+
+  h1 {
+    border-bottom: 2px solid $c-light-blue;
+    color: $c-white;
+    font-family: $ff-primary-light;
+    font-size: 28px;
+    height: 65px;
+    white-space: nowrap;
+    width: 35px;
+
+    @include mobile-only {
+      transform: translateX(-330%);
+    }
+  }
+
+  p {
+    color: $c-white;
+    font-family: $ff-primary-regular;
+    font-size: 16px;
+    margin: 30px 0;
+
+    @include mobile-only {
+      padding: 0 10px;
+    }
+  }
+
+  button {
+    background: transparent;
+    border: 1px solid $c-light-blue;
+    border-radius: 30px;
+    color: $c-white;
+    font-family: $ff-primary-bold;
+    font-size: 13px;
+    height: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: background 0.5s ease-out;
+    width: 140px;
+
+    @include mobile-only {
+      margin-bottom: 20px;
+    }
+
+    &:active {
+      background: transparent;
+    }
+
+    &:hover {
+      background: $c-light-blue;
+      cursor: pointer;
+    }
+  }
+}

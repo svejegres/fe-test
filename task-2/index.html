@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Page title -->
+  <title>Front-End test, task 2</title>
+
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"/>
+
+  <meta name="description"
+        content="Responsive web form with front-end validation."/>
+
+  <!-- Icon -->
+  <link rel="icon"
+        href="assets/images/favicon.ico">
+
+  <!-- Styles -->
+  <link rel="stylesheet"
+        href="assets/css/main.css" async>
+
+  <!-- Javascript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous">
+  </script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <div id="bodycontainer">
+    <header>
+      <nav class="breadcrumbs">
+        <a href="#">Home</a> |
+        <a href="#" class="current-location">Get a quote</a>
+      </nav>
+      <h1>Get a quote</h1>
+      <h2>Say Hello!</h2>
+      <p>Have a question? Looking for a product? Let us know.</p>
+    </header>
+    <div class="loading-icon">
+      <div class="loader loader--style1" title="0">
+        <svg version="1.1" id="loader-1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+        <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+          s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+          c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>
+        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+          C22.32,8.481,24.301,9.057,26.013,10.047z" transform="rotate(195.656 20 20)">
+          <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"></animateTransform>
+          </path>
+        </svg>
+      </div>
+    </div>
+    <form id="form-project" method="post" enctype='multipart/form-data' action>
+      <h1>Let us know more about the project</h1>
+      <div id="form-name">
+        <label for="name">
+          Name
+        </label>
+        <input type="text" id="name" name="name">
+      </div>
+      <div id="form-phone-number">
+        <label for="phone-number">
+          Phone number
+        </label>
+        <input type="tel" id="phone-number" name="phone-number">
+      </div>
+      <div id="form-email">
+        <label for="email">
+          Email address
+        </label>
+        <input type="email" id="email" name="email">
+      </div>
+      <div id="form-project-postcode">
+        <label for="project-postcode">
+          Project postcode <span>(if different from home or work)</span>
+        </label>
+        <input type="number" id="project-postcode" name="project-postcode">
+      </div>
+      <select id="form-customer-type" class="form-button" name="customer-type">
+        <option selected disabled>Customer Type</option>
+        <option value="type-1">Type 1</option>
+        <option value="type-2">Type 2</option>
+        <option value="type-3">Type 3</option>
+      </select>
+      <select id="form-floor-construction" class="form-button" name="floor-construction">
+        <option selected disabled>Floor Construction</option>
+        <option value="construction-1">Construction 1</option>
+        <option value="construction-2">Construction 2</option>
+        <option value="construction-3">Construction 3</option>
+      </select>
+      <select id="form-type-of-build" class="form-button" name="type-of-build">
+        <option selected disabled>Type of build</option>
+        <option value="build-1">Build 1</option>
+        <option value="build-2">Build 2</option>
+        <option value="build-3">Build 3</option>
+      </select>
+      <div id="form-files">
+        <label for="files" class="form-button">
+          Choose files to upload <span>(max 5MB)</span>
+        </label>
+        <input type="file" multiple="multiple" id="files" name="files[]">
+        <ul id="uploaded-files"></ul>
+      </div>
+      <div id="form-project-information">
+        <label for="project-information">
+          Further project information
+        </label>
+        <textarea id="project-information" name="project-information" rows="4"></textarea>
+      </div>
+      <p>
+        By submitting this form, I acknowledge that I have read and agree to the
+        <a href="#">Privacy Policy</a>
+        and understand that the submitted information is an initial application step.
+      </p>
+      <div id="form-submit-button">
+        <button type="submit" class="form-button">Send enquiry</button>
+      </div>
+      <div id="form-success-message">
+        <h1>Thanks you for your message!</h1>
+        <p>We will get back to you soon</p>
+        <img src="assets/images/done-icon.svg" alt="Checked checkbox icon">
+  		</div>
+    </form>
+  </div>
+</body>
+</html>
